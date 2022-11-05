@@ -3,14 +3,23 @@
 
 const etanol = 3.80;
 const gasolina = 5.79;
-const combustivel = kmgasolina;
+const combustivel = 0;
 const kmlt = 17;
 const km = 400;
-const valorviagem = 0;
 
-if (combustivel === kmgasolina){
-    valorviagem = (km / kmlt) * gasolina;
-    console.log ('O valor da gasolina gasta na viagem será de: ', valorviagem)
+ if (combustivel === 1){
+    const valorviagem = (km / kmlt) * etanol;
+    console.log ('O valor do etanol gasto na viagem será de: R$ ', valorviagem.toFixed(2));
 }
+else if (combustivel === 2){
+    const valorviagem = (km / kmlt) * gasolina;
+    console.log ('O valor da gasolina gasta na viagem será de: R$ ', valorviagem.toFixed(2));
+}
+else{
+    console.log('Digite uma entrada válida');
+}
+
+
+
 
 
