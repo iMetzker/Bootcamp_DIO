@@ -1,20 +1,27 @@
-function pagamento (valor, forma){
-    if (forma === 'debito'){
-        return 'O valor a ser pago é: ' + (valor - (valor * 0.1));
-    }
-    else if (forma === 'dinheiro' | 'pix') {
-        return 'O valor a ser pago no dinheiro ou por PIX é de R$ ' + (valor - (valor * 0.15));
-    }
-    else if (forma === 'dividir2x') {
-        return 'O valor total a ser pago dividindo em 2x é de R$ ' + valor;
-    }
-    else if (forma === 'dividir2+') {
-        return 'O valor total a ser pago dividindo em mais de 2x é de R$ ' + (valor + (valor * 0.1));
-        
-    }
-    else {
-        return 'Insira uma forma de pagamento válida';
-    }
+function pagamento (valor, desconto){
+    return (valor - (valor * (desconto / 100)));
 }
 
-console.log( pagamento (100,'dividir2x'));
+function pagamentoJuros (valor, juros){
+    return (valor + (valor * (juros / 100)));
+}
+
+const valorProduto = 100;
+const formaDePagamento = 4;
+
+
+if (formaDePagamento === 1) {
+    console.log('O valor a ser pago é ' + pagamento(valorProduto,10));
+}
+else if (formaDePagamento === 2) {
+    console.log('O valor a ser pago é ' + pagamento(valorProduto,15));
+}
+else if (formaDePagamento === 3) {
+    console.log('O valor a ser pago é ' + valorProduto);
+}
+else if (formaDePagamento === 4) {
+    console.log('O valor a ser pago é ' + pagamentoJuros(valorProduto,10));
+}
+else {
+    console.log('Insira uma forma de pagamento válida');
+}
