@@ -7,5 +7,5 @@ function print(texto) {
 
 }
 
-//Definindo um objeto com metodo gets e print (Exportando com module)
+//Definindo um objeto com metodo gets e print (Exportando com module.exports)
 module.exports = {gets, print};
