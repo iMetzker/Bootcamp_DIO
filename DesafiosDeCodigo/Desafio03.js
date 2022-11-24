@@ -1,12 +1,12 @@
 let n = 15;
-let soma = 0;
 
 
-function somatorio (n){
-    for (let i = n; i >= 0 ; i--) {
-        soma = soma + (n - i); 
+function somatorio(n) {
+    if (n === 1) {
+        return 1;
     }
-    console.log(soma);
+
+    return n + somatorio(n - 1);
 }
 
-somatorio(n);
+console.log(somatorio(n));
